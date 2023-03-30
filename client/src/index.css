@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Fauna+One:regular);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  margin: auto;
+}
