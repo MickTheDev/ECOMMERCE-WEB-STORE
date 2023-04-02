@@ -25,6 +25,8 @@ const CartMenu = () => {
   const cart = useSelector((state) => state.cart.cart);
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
+  console.log(cart);
+
   const totalPrice = cart.reduce((total, item) => {
     return total + item.count * item.attributes.price;
   }, 0);
@@ -68,7 +70,7 @@ const CartMenu = () => {
                       alt={item?.name}
                       width='123px'
                       height='164px'
-                      src={`http://localhost:2000${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                      src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                     />
                   </Box>
                   <Box flex='1 1 60%'>
@@ -85,7 +87,6 @@ const CartMenu = () => {
                       </IconButton>
                     </FlexBox>
                     <Typography>{item.attributes.shortDescription}</Typography>
-                    {/* Amount */}
                     <FlexBox m='15px 0'>
                       <Box
                         display='flex'

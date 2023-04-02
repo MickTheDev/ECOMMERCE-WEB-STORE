@@ -13,7 +13,7 @@ const Item = ({ item, width }) => {
   const [count, setCount] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
   const {
-    pallete: { neutral },
+    palette: { neutral },
   } = useTheme();
 
   const { category, price, name, image } = item.attributes;
@@ -35,16 +35,16 @@ const Item = ({ item, width }) => {
         onMouseOut={() => setIsHovered(false)}
       >
         <img
-          src={`https://localhost:1337${url}`}
+          src={`http://localhost:1337${url}`}
           alt={item.name}
           width='300px'
           height='400px'
           onClick={() => navigate(`/item/${item.id}`)}
-          style={{ cursor: pointer }}
+          style={{ cursor: 'pointer' }}
         />
         {/* amount */}
         <Box
-          display={isHovered ? 'blocked' : 'none'}
+          display={isHovered ? 'block' : 'none'}
           position='absolute'
           bottom='10%'
           left='0'
@@ -70,7 +70,7 @@ const Item = ({ item, width }) => {
             {/* button */}
             <Button
               onClick={() => {
-                dispatch(addToCart({ ...item, count }));
+                dispatch(addToCart({ item: { ...item, count } }));
               }}
               sx={{ backgroundColor: shades.primary[300], color: 'white' }}
             >
